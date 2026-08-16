@@ -1,10 +1,13 @@
 <script setup lang="ts">
+import { storeToRefs } from "pinia"
 import { useProfileStore } from "@/stores/profile"
 
 const profileStore = useProfileStore()
 
-// 不具合: プリミティブな状態を直接分割代入すると、以後の更新を購読できない。
-const { displayName, rename } = profileStore
+// 状態は ref として取得し、テンプレートが更新を追跡できるようにする。
+const { displayName } = storeToRefs(profileStore)
+// アクションはストアへ束縛されているため、直接取得してよい。
+const { rename } = profileStore
 
 function updateName() {
   rename("佐藤")

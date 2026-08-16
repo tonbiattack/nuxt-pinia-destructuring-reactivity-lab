@@ -1,0 +1,3 @@
+
+> nuxt-pinia-destructuring-reactivity-lab@0.1.0 typecheck /home/ubuntu/debug-lab-work/qiita/examples/nuxt-pinia-destructuring-reactivity-lab
+> nuxt typecheck
